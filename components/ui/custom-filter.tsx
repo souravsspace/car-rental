@@ -9,12 +9,10 @@ import { Fragment, useState } from "react"
 
 export default function CustomFilter({ title, options }: CUSTOM_FILTER_TYPE) {
    const [selected, setSelected] = useState(options[0])
-
    const router = useRouter()
 
    const handleUpdateParams = (e: { title: string; value: string }) => {
       const newPathName = updateSearchParams(title, e.value.toLowerCase())
-
       router.push(newPathName, { scroll: false })
    }
 
