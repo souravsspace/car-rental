@@ -5,6 +5,9 @@ type CUSTOM_BUTTON_TYPE = {
    containerStyles?: string
    handleClick?: MouseEventHandler<HTMLButtonElement>
    btnType?: "button" | "submit"
+   textStyles?: string
+   rightIcon?: string
+   isDisabled?: boolean
 }
 
 type FUEL_TYPE = {
@@ -25,4 +28,42 @@ type CUSTOM_FILTER_TYPE = {
 type SEARCH_MANUFACTURER_TYPE = {
    manufacturer: string
    setManufacturer: (manufacturer: string) => void
+}
+
+type CAR_TYPE = {
+   city_mpg: number
+   class: string
+   combination_mpg: number
+   cylinders: number
+   displacement: number
+   drive: string
+   fuel_type: string
+   highway_mpg: number
+   make: string
+   model: string
+   transmission: string
+   year: number
+}
+
+type CAR_CARD_TYPE = {
+   car: CAR_TYPE
+}
+
+type CAR_DETAILS_TYPE = {
+   isOpen: boolean
+   closeModal: () => void
+   car: CAR_TYPE
+}
+
+type CAR_FILTER_TYPE = {
+   manufacturer: string
+   model: string
+   fuel: string
+   year: number
+   limit: number
+}
+
+type SHOW_MORE_TYPE = {
+   pageNumber: number
+   isNext: boolean
 }
